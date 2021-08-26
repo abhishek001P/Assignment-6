@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="=en">
+    <head>
+        <link rel="stylesheet" href="font-awesome.css">
+        <style media="screen">
+            *{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                letter-spacing: 1px;
+                text-transform: capitalize;
+            }
+            body{
+                min-height: 100vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: linear-gradient(45deg, #ff0 50%, #333 50%);
+            }
+            .container
+            {
+                height:450px;
+                width: 330px;
+                background: #fff;
+                border-radius: 20px;
+                box-shadow: -5px 10px 10px rgba(0,0,0,0.8);
+                padding: 10px;
+                overflow-y: auto;
+            }
+            #input{
+                height: 50px;
+                width: 100%;
+                outline: none;
+                border: none;
+                border-radius: 5px;
+                background: #666;
+                color:#fff;
+                padding: 0 10px;
+                margin: 15px 0;
+            }
+            #input::placeholder{
+                color: #bbb;
+            }
+        </style>
+        <script src="jquery.js" charset="utf-8"></script>
+    </head>
+    <body>
+        <div class="container">
+            <input type = "text" id="input" placeholder="Enter to add task">
+            <ul></ul>
+        </div>
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $('#input').change(function(){
+                var input = $(this).val();
+                $('ul').append('<li>'+input+'<i class="fas fa-check"></i></li>');
+                $(this).val(' ');
+            });
+        });
+        </script>
+    </body>
+</html>
